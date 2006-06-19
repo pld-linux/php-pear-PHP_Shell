@@ -3,7 +3,6 @@
 %define		_subclass	Shell
 %define		_status		alpha
 %define		_pearname	PHP_Shell
-
 Summary:	%{_pearname} - an interactive PHP Shell like IPython
 Summary(pl):	%{_pearname} - interaktywna pow³oka PHP podobna do IPythona
 Name:		php-pear-%{_pearname}
@@ -38,6 +37,20 @@ b³êdów...
 
 Ta klasa ma w PEAR status: %{_status}.
 
+%package tests
+Summary:	Tests for PEAR::%{_pearname}
+Summary(pl):	Testy dla PEAR::%{_pearname}
+Group:		Development/Languages/PHP
+Requires:	%{name} = %{version}-%{release}
+AutoReq:	no
+AutoProv:	no
+
+%description tests
+Tests for PEAR::%{_pearname}.
+
+%description tests -l pl
+Testy dla PEAR::%{_pearname}.
+
 %prep
 %pear_package_setup
 
@@ -68,3 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/PHP/Shell/Extensions/Colour.php
 %{php_pear_dir}/PHP/Shell/Extensions/ExecutionTime.php
 %{php_pear_dir}/PHP/Shell/Extensions/Prototypes.php
+
+%files tests
+%defattr(644,root,root,755)
+%{php_pear_dir}/tests/*
