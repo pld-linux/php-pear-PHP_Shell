@@ -7,7 +7,7 @@ Summary:	%{_pearname} - an interactive PHP Shell like IPython
 Summary(pl):	%{_pearname} - interaktywna pow³oka PHP podobna do IPythona
 Name:		php-pear-%{_pearname}
 Version:	0.3.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -53,13 +53,15 @@ Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
+%{__sed} -i -e '1i#!/usr/bin/php' ./%{php_pear_dir}/php-shell-cmd.php
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{php_pear_dir},%{_bindir}}
 %pear_package_install
 
-install usr/bin/php-shell.sh $RPM_BUILD_ROOT%{_bindir}/php-shell
+mv $RPM_BUILD_ROOT%{php_pear_dir}/php-shell-cmd.php $RPM_BUILD_ROOT%{_bindir}/php-shell
+chmod +x $RPM_BUILD_ROOT%{_bindir}/php-shell
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -69,11 +71,12 @@ rm -rf $RPM_BUILD_ROOT
 %doc docs/%{_pearname}/{examples/php-shell-cmd.php,README}
 %attr(755,root,root) %{_bindir}/php-shell
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/php-shell-cmd.php
 %{php_pear_dir}/PHP/Shell.php
+%dir %{php_pear_dir}/PHP/Shell
 %{php_pear_dir}/PHP/Shell/Commands.php
 %{php_pear_dir}/PHP/Shell/Options.php
 %{php_pear_dir}/PHP/Shell/Extensions.php
+%dir %{php_pear_dir}/PHP/Shell/Extensions
 %{php_pear_dir}/PHP/Shell/Extensions/Autoload.php
 %{php_pear_dir}/PHP/Shell/Extensions/AutoloadDebug.php
 %{php_pear_dir}/PHP/Shell/Extensions/InlineHelp.php
