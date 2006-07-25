@@ -6,12 +6,13 @@
 Summary:	%{_pearname} - an interactive PHP Shell like IPython
 Summary(pl):	%{_pearname} - interaktywna pow³oka PHP podobna do IPythona
 Name:		php-pear-%{_pearname}
-Version:	0.3.0
-Release:	2
+Version:	0.3.1
+Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
-Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	9812da88473d3952899c8048eca9ff5d
+#Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
+Source0:	http://jan.kneschke.de/projects/php-shell/PHP_Shell-%{version}.tgz
+# Source0-md5:	0e5487d675dd7451138c599265a02af7
 URL:		http://pear.php.net/package/PHP_Shell/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -74,16 +75,17 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/PHP/Shell.php
 %dir %{php_pear_dir}/PHP/Shell
 %{php_pear_dir}/PHP/Shell/Commands.php
-%{php_pear_dir}/PHP/Shell/Options.php
 %{php_pear_dir}/PHP/Shell/Extensions.php
+%{php_pear_dir}/PHP/Shell/Options.php
 %dir %{php_pear_dir}/PHP/Shell/Extensions
 %{php_pear_dir}/PHP/Shell/Extensions/Autoload.php
 %{php_pear_dir}/PHP/Shell/Extensions/AutoloadDebug.php
-%{php_pear_dir}/PHP/Shell/Extensions/InlineHelp.php
-%{php_pear_dir}/PHP/Shell/Extensions/VerbosePrint.php
 %{php_pear_dir}/PHP/Shell/Extensions/Colour.php
 %{php_pear_dir}/PHP/Shell/Extensions/ExecutionTime.php
+%{php_pear_dir}/PHP/Shell/Extensions/InlineHelp.php
+%{php_pear_dir}/PHP/Shell/Extensions/LoadScript.php
 %{php_pear_dir}/PHP/Shell/Extensions/Prototypes.php
+%{php_pear_dir}/PHP/Shell/Extensions/VerbosePrint.php
 
 %files tests
 %defattr(644,root,root,755)
