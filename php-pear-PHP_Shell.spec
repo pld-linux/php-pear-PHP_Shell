@@ -7,7 +7,7 @@ Summary:	%{_pearname} - an interactive PHP Shell like IPython
 Summary(pl):	%{_pearname} - interaktywna pow³oka PHP podobna do IPythona
 Name:		php-pear-%{_pearname}
 Version:	0.3.1
-Release:	2
+Release:	3
 License:	MIT
 Group:		Development/Languages/PHP
 #Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -16,11 +16,11 @@ Source0:	http://jan.kneschke.de/projects/php-shell/PHP_Shell-%{version}.tgz
 URL:		http://pear.php.net/package/PHP_Shell/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
+Requires:	php(readline)
+Requires:	php(tokenizer)
 Requires:	php-common >= 4:5.0.0
 Requires:	php-pear
 Requires:	php-pear-PEAR-core >= 1:1.4.0-0.b1
-Requires:	php-readline
-Requires:	php-tokenizer
 Obsoletes:	php-shell
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
