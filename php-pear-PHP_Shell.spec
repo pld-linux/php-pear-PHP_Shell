@@ -4,7 +4,7 @@
 %define		_status		alpha
 %define		_pearname	PHP_Shell
 Summary:	%{_pearname} - an interactive PHP Shell like IPython
-Summary(pl):	%{_pearname} - interaktywna pow³oka PHP podobna do IPythona
+Summary(pl.UTF-8):   %{_pearname} - interaktywna powÅ‚oka PHP podobna do IPythona
 Name:		php-pear-%{_pearname}
 Version:	0.3.1
 Release:	3
@@ -31,16 +31,16 @@ tab-completion, handling of fatal errors, debugging aid, ...
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Oparta na PHP implementacja interaktywnej pow³oki z histori±,
-dope³nianiem tabem, obs³ug± b³êdów krytycznych, pomoc± przy usuwaniu
-b³êdów...
+%description -l pl.UTF-8
+Oparta na PHP implementacja interaktywnej powÅ‚oki z historiÄ…,
+dopeÅ‚nianiem tabem, obsÅ‚ugÄ… bÅ‚Ä™dÃ³w krytycznych, pomocÄ… przy usuwaniu
+bÅ‚Ä™dÃ³w...
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{version}-%{release}
 AutoReq:	no
@@ -49,7 +49,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
