@@ -1,26 +1,24 @@
 %include	/usr/lib/rpm/macros.php
-%define		_class		PHP
-%define		_subclass	Shell
 %define		_status		alpha
 %define		_pearname	PHP_Shell
 Summary:	%{_pearname} - an interactive PHP Shell like IPython
 Summary(pl.UTF-8):	%{_pearname} - interaktywna powłoka PHP podobna do IPythona
 Name:		php-pear-%{_pearname}
 Version:	0.3.1
-Release:	4
+Release:	5
 License:	MIT
 Group:		Development/Languages/PHP
 #Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 Source0:	http://jan.kneschke.de/projects/php-shell/PHP_Shell-%{version}.tgz
 # Source0-md5:	0e5487d675dd7451138c599265a02af7
 URL:		http://pear.php.net/package/PHP_Shell/
-BuildRequires:	php-pear-PEAR
+BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.b1
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php(readline)
 Requires:	php(tokenizer)
 Requires:	php-common >= 4:5.0.0
 Requires:	php-pear
-Requires:	php-pear-PEAR-core >= 1:1.4.0-0.b1
+Requires:	php-pear-PEAR-core >= 1:1.4
 Obsoletes:	php-shell
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -43,8 +41,8 @@ Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{version}-%{release}
-AutoReq:	no
 AutoProv:	no
+AutoReq:	no
 
 %description tests
 Tests for PEAR::%{_pearname}.
