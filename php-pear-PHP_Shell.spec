@@ -14,6 +14,7 @@ Source0:	http://jan.kneschke.de/projects/php-shell/PHP_Shell-%{version}.tgz
 URL:		http://pear.php.net/package/PHP_Shell/
 BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.b1
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
+BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php(readline)
 Requires:	php(tokenizer)
 Requires:	php-common >= 4:5.0.0
