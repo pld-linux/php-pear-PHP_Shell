@@ -21,6 +21,7 @@ Requires:	php-common >= 4:5.0.0
 Requires:	php-pear
 Requires:	php-pear-PEAR-core >= 1:1.4
 Obsoletes:	php-shell
+Obsoletes:	php-pear-PHP_Shell-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,20 +37,6 @@ dopełnianiem tabem, obsługą błędów krytycznych, pomocą przy usuwaniu
 błędów...
 
 Ta klasa ma w PEAR status: %{_status}.
-
-%package tests
-Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
-Group:		Development/Languages/PHP
-Requires:	%{name} = %{version}-%{release}
-AutoProv:	no
-AutoReq:	no
-
-%description tests
-Tests for PEAR::%{_pearname}.
-
-%description tests -l pl.UTF-8
-Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
@@ -85,7 +72,3 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/PHP/Shell/Extensions/LoadScript.php
 %{php_pear_dir}/PHP/Shell/Extensions/Prototypes.php
 %{php_pear_dir}/PHP/Shell/Extensions/VerbosePrint.php
-
-%files tests
-%defattr(644,root,root,755)
-%{php_pear_dir}/tests/*
