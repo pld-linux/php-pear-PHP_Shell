@@ -1,6 +1,5 @@
 %define		status		alpha
 %define		pearname	PHP_Shell
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - an interactive PHP Shell like IPython
 Summary(pl.UTF-8):	%{pearname} - interaktywna powłoka PHP podobna do IPythona
 Name:		php-pear-%{pearname}
